@@ -1,3 +1,5 @@
 # Hostel-Management-System-Using-Django
 Python Project
-[Uploading Django min project.pdf…]()
+
+
+[Django min project.pdf](https://github.com/user-attachments/files/20822655/Django.min.project.pdf)
