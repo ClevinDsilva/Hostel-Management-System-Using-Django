@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Complaints</title>
+    <link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .complaint-list {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 0;
+        }
+
+        .complaint-item {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
+
+        .complaint-item:last-child {
+            border-bottom: none;
+        }
+
+        .complaint-item strong {
+            display: block;
+            color: #555;
+        }
+
+        .complaint-item p {
+            margin: 5px 0;
+        }
+
+        .no-complaints {
+            text-align: center;
+            color: #888;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Complaints</h1>
+        <div class="complaint-list">
+            {% for complaint in complaints %}
+                <div class="complaint-item">
+                    <strong>Subject:</strong> <p>{{ complaint.subject }}</p>
+                    <strong>Description:</strong> <p>{{ complaint.description }}</p>
+                    <strong>Student:</strong> <p>{{ complaint.student }}</p>
+                </div>
+            {% empty %}
+                <div class="no-complaints">
+                    <p>No complaints found.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

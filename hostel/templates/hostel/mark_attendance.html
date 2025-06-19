@@ -1,0 +1,12 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+<div class="container">
+<h2>Mark Attendance</h2>
+<p>Student: {{ student.name }}</p>
+<p>Date: {{ student.roll_number }}</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Mark Attendance</button>
+</form>
+</div>

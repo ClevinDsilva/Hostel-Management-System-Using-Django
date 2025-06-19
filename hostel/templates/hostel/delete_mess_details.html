@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+<div class="form-container">
+    <h2>Delete Mess Details</h2>
+    <p>Are you sure you want to delete mess details for {{ mess_detail.day }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, Delete</button>
+        <a href="{% url 'view_mess_details' %}">Cancel</a>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+<div class="container">
+    <h2>Employees List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employees %}
+                <tr>
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.position }}</td>
+                    <td>
+                        <a href="{% url 'update_employee' employee.id %}">Edit</a>
+                        <a href="{% url 'delete_employee' employee.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

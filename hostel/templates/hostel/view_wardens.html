@@ -1,0 +1,31 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+<div class="container">
+    <h2>Wardens List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for warden in wardens %}
+                <tr>
+                    <td>{{ warden.id }}</td>
+                    <td>{{ warden.name }}</td>
+                    <td>{{ warden.phone_number }}</td>
+                    <td>{{ warden.email }}</td>
+                    <td>
+                        <a href="{% url 'update_warden' warden.id %}">Edit</a>
+                        <a href="{% url 'delete_warden' warden.id %}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

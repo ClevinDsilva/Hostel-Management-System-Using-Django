@@ -1,0 +1,46 @@
+<div class="top-nav">
+    <h1>Warden Dashboard</h1>
+    <div class="container">
+        <div class="nav-buttons">
+            <a href="{% url 'custom_logout' %}" class="nav-button logout">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+        </div>
+    </div>
+</div>
+{% block content %}
+    <div class="dashboard">
+        <div class="dashboard-item">
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <img src="{% static 'hostel/images/students_icon.png' %}" alt="Students Icon">
+            <h2>Students</h2>
+            <a href="{% url 'view_students' %}" class="button">View Students</a>
+        </div>
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/employees_icon.png' %}" alt="Employees Icon">
+            <h2>Employees</h2>
+            <a href="{% url 'view_employees' %}" class="button">View Employees</a>
+        </div>
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/rooms_icon.png' %}" alt="Rooms Icon">
+            <h2>Rooms</h2>
+            <a href="{% url 'view_rooms' %}" class="button">View Rooms</a>
+        </div>
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/mess_icon.png' %}" alt="Mess Icon">
+            <h2>Mess Details</h2>
+            <a href="{% url 'view_mess_items' %}" class="button">View Mess Details</a>
+        </div>
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/complaints_icon.png' %}" alt="Complaints Icon">
+            <h2>Complaints</h2>
+            <a href="{% url 'view_complaints' %}" class="button">View Complaints</a>
+        </div>
+    </div>
+{% endblock %}

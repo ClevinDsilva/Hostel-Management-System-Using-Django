@@ -1,0 +1,30 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+<div class="container">
+    <h2>Roommates</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Room Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for roommate in roommates %}
+                <tr>
+                    <td>{{ roommate.id }}</td>
+                    <td>{{ roommate.name }}</td>
+                    <td>{{ roommate.email }}</td>
+                    <td>{{ roommate.room.room_number }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="4">No roommates assigned yet.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

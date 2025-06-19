@@ -1,0 +1,48 @@
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+<div class="container">
+    <h2>Mess Details List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Day</th>
+                <th>Breakfast</th>
+                <th>Lunch</th>
+                <th>Snacks</th>
+                <th>Dinner</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mess in mess_details %}
+                <tr>
+                    <td>{{ mess.day }}</td>
+                    <td>{{ mess.breakfast|default:"N/A" }}</td>
+                    <td>{{ mess.lunch|default:"N/A" }}</td>
+                    <td>{{ mess.snacks|default:"N/A" }}</td>
+                    <td>{{ mess.dinner|default:"N/A" }}</td>
+                    <td>
+                        {% if user.is_authenticated and user.is_staff %}
+                            <a href="{% url 'edit_mess_details' mess.id %}" class="button">Edit</a>
+                            <a href="{% url 'delete_mess_details' mess.id %}" class="button">Delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">No mess details available.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <th>
+    <a href="{% url 'add_mess_details' 'Monday' %}" class="button">Add Mess Details for Monday</a>
+    <a href="{% url 'add_mess_details' 'Tuesday' %}" class="button">Add Mess Details for Tuesday</a>
+    <a href="{% url 'add_mess_details' 'Wednesday' %}" class="button">Add Mess Details for Wednesday</a>
+    <a href="{% url 'add_mess_details' 'Thursday' %}" class="button">Add Mess Details for Thursday</a>
+    <a href="{% url 'add_mess_details' 'Friday' %}" class="button">Add Mess Details for Friday</a>
+    <a href="{% url 'add_mess_details' 'Saturday' %}" class="button">Add Mess Details for Saturday</a>
+    <a href="{% url 'add_mess_details' 'Sunday' %}" class="button">Add Mess Details for Sunday</a>
+    </th>
+</div>

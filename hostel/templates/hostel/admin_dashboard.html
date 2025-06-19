@@ -1,0 +1,82 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<div class="top-nav">
+    <h1>Admin Dashboard</h1>
+        <div class="nav-buttons">
+            <a href="{% url 'custom_logout' %}" class="nav-button logout">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+        </div>
+    </div>
+</div>
+
+<!-- Main Dashboard Content -->
+    <div class="dashboard">
+        <!-- Students Section -->
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/students_icon.png' %}" alt="Students Icon">
+            <div class="dashboard-text">
+                <h2>Students</h2>
+                <p>Total: {{ students.count }}</p>
+                <a href="{% url 'view_students' %}" class="button">View Students</a>
+                <a href="{% url 'add_student' %}" class="button add-button">Add Student</a>
+            </div>
+        </div>
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/OIP.jpg' %}" alt="Attendance Icon">
+            <h2>View Student Attendance</h2>
+            <a href="{% url 'view_attendance' %}" class="button">view Attendance</a>
+        </div>
+
+        <!-- Employees Section -->
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/employees_icon.png' %}" alt="Employees Icon">
+            <div class="dashboard-text">
+                <h2>Employees</h2>
+                <p>Total: {{ employees.count }}</p>
+                <a href="{% url 'view_employees' %}" class="button">View Employees</a>
+                <a href="{% url 'add_employee' %}" class="button add-button">Add Employee</a>
+            </div>
+        </div>
+
+        <!-- Wardens Section -->
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/wardens_icon.png' %}" alt="Wardens Icon">
+            <div class="dashboard-text">
+                <h2>Wardens</h2>
+                <p>Total: {{ wardens.count }}</p>
+                <a href="{% url 'view_wardens' %}" class="button">View Wardens</a>
+                <a href="{% url 'add_warden' %}" class="button add-button">Add Warden</a>
+            </div>
+        </div>
+
+        <!-- Rooms Section -->
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/rooms_icon.png' %}" alt="Rooms Icon">
+            <div class="dashboard-text">
+                <h2>Rooms</h2>
+                <p>Total: {{ rooms.count }}</p>
+                <a href="{% url 'view_rooms' %}" class="button">View Rooms</a>
+                <a href="{% url 'add_room' %}" class="button add-button">Add Room</a>
+            </div>
+        </div>
+
+        <!-- Complaints Section -->
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/complaints_icon.png' %}" alt="Complaints Icon">
+            <h2>Complaints</h2>
+            <a href="{% url 'view_complaints' %}" class="button">View Complaints</a>
+        </div>
+
+        <!-- Mess Details Section -->
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/mess_icon.png' %}" alt="Mess Icon">
+            <div class="dashboard-text">
+                <h2>Mess Details</h2>
+                <a href="{% url 'view_mess_details' %}" class="button">View Mess Details</a>
+            </div>
+        </div>
+    </div>
+</div>

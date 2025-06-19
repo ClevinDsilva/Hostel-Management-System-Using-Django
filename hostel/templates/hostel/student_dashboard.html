@@ -1,0 +1,49 @@
+<div class="top-nav">
+    <h1>Student Dashboard</h1>
+    <div class="container">
+        <div class="nav-buttons">
+            <a href="{% url 'custom_logout' %}" class="nav-button logout">
+                <i class="fas fa-sign-out-alt"></i>
+              </a>
+        </div>
+    </div>
+</div>
+{% block content %}
+    <div class="dashboard">
+        <div class="dashboard-item">
+            {% load static %}
+            <link rel="stylesheet" href="{% static 'hostel/css/style.css' %}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+            <img src="{% static 'hostel/images/mess_icon.png' %}" alt="Mess Icon">
+            <div class="dashboard-text">
+                <h2>Mess Details</h2>
+                <a href="{% url 'view_mess_items' %}" class="button">View Mess Details</a>
+            </div>
+        </div>
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/OIP.jpg' %}" alt="Roommates Icon">
+            <div class="dashboard-text">
+                <h2>Add Attendance</h2>
+                <a href="{% url 'mark_attendance' %}" class="button">Attendance</a>
+            </div>
+        </div>
+
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/roommates_icon.png' %}" alt="Roommates Icon">
+            <div class="dashboard-text">
+                <h2>Roommates</h2>
+                <a href="{% url 'view_roommates' %}" class="button">View Roommates</a>
+            </div>
+        </div>
+
+        <div class="dashboard-item">
+            <img src="{% static 'hostel/images/complaint_icon.png' %}" alt="Complaint Icon">
+            <div class="dashboard-text">
+                <h2>Raise Complaint</h2>
+                <a href="{% url 'raise_complaint' %}" class="button add-button">Raise Complaint</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
