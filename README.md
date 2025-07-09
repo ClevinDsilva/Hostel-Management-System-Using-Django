@@ -8,8 +8,8 @@ A web-based Hostel Management System built using the **Django framework**. This 
 
 - **Frontend:** HTML5, CSS3, Bootstrap
 - **Backend:** Python, Django
-- **Database:** MySQL
-- **Server:** Apache (optional for deployment)
+- **Database:** sqllite3
+  
 
 ---
 
@@ -48,7 +48,7 @@ A web-based Hostel Management System built using the **Django framework**. This 
 ### 📦 Prerequisites
 - Python 3.x
 - pip
-- MySQL
+- sqllite3
 - Django (`pip install django`)
 
 ### 🔧 Installation
@@ -63,24 +63,6 @@ cd Hostel-Management-System-Using-Django
 
 python -m venv venv
 source venv/bin/activate  # On Windows use venv\Scripts\activate
-
-# Install Dependencies
-pip install -r requirements.txt  # If provided
-
-# Configure Database
-
-Update settings.py to use MySQL:
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'your_db_name',
-        'USER': 'your_username',
-        'PASSWORD': 'your_password',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
 
 # Run Migrations and Create Superuser
 
