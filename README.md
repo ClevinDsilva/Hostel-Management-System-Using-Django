@@ -9,14 +9,6 @@ A web-based Hostel Management System built using the **Django framework**. This 
 - **Frontend:** HTML5, CSS3, Bootstrap
 - **Backend:** Python, Django
 - **Database:** sqllite3
-  
-
----
-
-## 📁 Project Structure
-
-![image](https://github.com/user-attachments/assets/2285c9b6-268c-4004-aff3-13834de2b75d)
-
 
 ---
 
